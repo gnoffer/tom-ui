@@ -17,8 +17,8 @@ Demos: `demos/<theme>.html` im Browser öffnen (kein Build nötig).
 ## Nutzung als Claude-Code-Skill
 
 ```bash
-git clone git@github.com:gnoffer/hacker-ui.git ~/hacker-ui
-ln -s ~/hacker-ui ~/.claude/skills/hacker-ui
+git clone git@github.com:gnoffer/tom-ui.git ~/tom-ui
+ln -s ~/tom-ui ~/.claude/skills/hacker-ui
 ```
 
 Danach greift der Skill automatisch bei UI-Arbeit („baue die Seite im
