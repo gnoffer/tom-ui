@@ -1,0 +1,56 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hacker-ui · phosphor</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#0A0806;--panel:#12100C;--border:#3A2E10;--fg:#FFB000;--dim:#B37E00;
+--faint:#7A5800;--ok:#4AF626;--err:#FF4444;--mono:'Space Mono',monospace}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.6 var(--mono);padding:24px;
+text-shadow:0 0 8px rgb(255 176 0/.3)}
+@media (prefers-reduced-motion:no-preference){
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.06;
+background:repeating-linear-gradient(0deg,transparent 0 2px,#000 2px 3px)}
+.cursor::after{content:"▊";animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
+background:radial-gradient(ellipse at center,transparent 60%,rgb(0 0 0/.35) 100%)}
+.wrap{max-width:760px;margin:0 auto}
+.head{display:flex;justify-content:space-between;border-bottom:1px double var(--border);
+padding-bottom:8px;margin-bottom:18px;font-weight:700;letter-spacing:.08em}
+.head span{color:var(--dim)}
+.panel{background:var(--panel);border:1px solid var(--border);padding:14px 16px;margin-bottom:16px}
+.panel h2{margin:0 0 10px;font-size:14px;font-weight:700;letter-spacing:.1em;
+text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:8px}
+.row{display:flex;align-items:baseline;gap:8px;padding:3px 0}
+.row .leader{flex:1;border-bottom:1px dotted var(--faint);transform:translateY(-4px)}
+.st{font-weight:700}
+.st.ok{color:var(--ok);text-shadow:0 0 8px rgb(74 246 38/.4)}
+.st.err{color:var(--err);text-shadow:0 0 8px rgb(255 68 68/.4)}
+.dim{color:var(--dim)}.faint{color:var(--faint)}
+.prompt::before{content:"> ";color:var(--dim)}
+.btn{font:700 13px var(--mono);cursor:pointer;background:transparent;color:var(--fg);
+border:1px solid var(--fg);padding:8px 14px;text-transform:uppercase;letter-spacing:.06em;transition:all .12s}
+.btn::before{content:"[ "}.btn::after{content:" ]"}
+.btn:hover{background:var(--fg);color:var(--bg);text-shadow:none}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.actions{display:flex;gap:12px;margin-top:14px}
+</style></head><body><div class="wrap">
+<div class="head"><div>ZIEGLER//OPS <span>· TTY1</span></div><div class="dim">09:41:07</div></div>
+<div class="panel"><h2>System Monitor</h2>
+<div class="row"><span>sys.pve-dc</span><span class="leader"></span><span class="st ok">[ OK ]</span></div>
+<div class="row"><span>vpn.arbeit</span><span class="leader"></span><span class="st ok">[ OK ]</span></div>
+<div class="row"><span>backup.pbs</span><span class="leader"></span><span class="dim">[ 82% ]</span></div>
+<div class="row"><span>dns.watchdog</span><span class="leader"></span><span class="st err">[ DRIFT ]</span></div>
+<div class="row"><span>inference.grid</span><span class="leader"></span><span class="st ok">[ 3/3 ]</span></div>
+</div>
+<div class="panel"><h2>Log · letzte Ereignisse</h2>
+<div class="faint">09:38:12 wg-s2s handshake ok (1.5ms)</div>
+<div class="faint">09:35:40 pbs prune: 12 snapshots entfernt</div>
+<div>09:33:07 <span class="st err">WARN</span> zone ziegler.one: 2 records abweichend</div>
+<div class="faint">09:30:00 checkmk: 0 neue Probleme</div>
+</div>
+<div class="panel"><h2>Konsole</h2>
+<div class="prompt cursor">run diagnose --target dns</div>
+<div class="actions"><button class="btn">Execute</button><button class="btn">Abort</button></div>
+</div>
+</div></body></html>

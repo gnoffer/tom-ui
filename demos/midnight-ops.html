@@ -1,0 +1,62 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hacker-ui · midnight-ops</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{--bg:#0F172A;--panel:#1E293B;--panel-2:#172033;--border:#334155;--fg:#F8FAFC;
+--muted:#94A3B8;--accent:#22C55E;--accent-dim:#15803D;--ok:#22C55E;--warn:#F59E0B;
+--err:#EF4444;--info:#38BDF8;--radius:10px;--font:'IBM Plex Sans',system-ui,sans-serif;
+--mono:'JetBrains Mono',monospace}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 var(--font);padding:24px}
+.wrap{max-width:1100px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px}
+h1{font-size:18px;margin:0}h1 span{color:var(--muted);font-weight:400}
+.clock{font:13px var(--mono);color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px;transition:border-color .2s}
+.card:hover{border-color:#475569}
+.card h3{margin:0 0 12px;font-size:14px;display:flex;align-items:center;gap:8px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.dot.warn{background:var(--warn)}.dot.err{background:var(--err)}
+@media (prefers-reduced-motion:no-preference){.dot.live{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 5px rgb(34 197 94/.15)}}}
+.metric{font:500 26px/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.label{font:11px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.kv{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--panel-2);font:13px var(--mono)}
+.kv span:first-child{color:var(--muted);font-family:var(--font)}
+.btn{font:600 14px var(--font);border:0;border-radius:8px;padding:10px 16px;cursor:pointer;
+background:var(--accent);color:#052E16;transition:filter .15s,transform .1s}
+.btn:hover{filter:brightness(1.1)}.btn:active{transform:scale(.98)}
+.btn.sec{background:transparent;color:var(--fg);border:1px solid var(--border)}
+.btn.danger{background:transparent;color:var(--err);border:1px solid var(--err)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.badge{font:600 11px var(--mono);padding:3px 8px;border-radius:999px;border:1px solid}
+.badge.ok{color:var(--ok);border-color:var(--accent-dim)}
+.badge.err{color:var(--err);border-color:#7F1D1D}
+.actions{display:flex;gap:8px;margin-top:14px}
+</style></head><body><div class="wrap">
+<header><h1>ziegler<span>//ops</span></h1><div class="clock">2026-07-02 09:41:07 CEST</div></header>
+<div class="grid">
+<div class="card"><h3><span class="dot live"></span> vpn-arbeit <span style="margin-left:auto" class="badge ok">UP</span></h3>
+<div class="metric">99.98<span style="font-size:14px;color:var(--muted)"> %</span></div>
+<div class="label">Verfügbarkeit 30d</div>
+<div style="margin-top:12px">
+<div class="kv"><span>rtt</span><span>1.55 ms</span></div>
+<div class="kv"><span>loss</span><span>0.0 %</span></div>
+<div class="kv"><span>handshake</span><span>12 s</span></div></div>
+<div class="actions"><button class="btn">Deploy</button><button class="btn sec">Logs</button></div></div>
+<div class="card"><h3><span class="dot warn"></span> pbs-backup <span style="margin-left:auto" class="badge ok">82%</span></h3>
+<div class="metric">14.2<span style="font-size:14px;color:var(--muted)"> TiB</span></div>
+<div class="label">Offsite S3 · letzter Lauf 02:00</div>
+<div style="margin-top:12px">
+<div class="kv"><span>dauer</span><span>42 min</span></div>
+<div class="kv"><span>fehler</span><span>0</span></div></div>
+<div class="actions"><button class="btn sec">Details</button><button class="btn danger">Prune</button></div></div>
+<div class="card"><h3><span class="dot err"></span> dns-watchdog <span style="margin-left:auto" class="badge err">DRIFT</span></h3>
+<div class="metric">2</div>
+<div class="label">abweichende Records</div>
+<div style="margin-top:12px">
+<div class="kv"><span>zone</span><span>ziegler.one</span></div>
+<div class="kv"><span>check</span><span>vor 3 min</span></div></div>
+<div class="actions"><button class="btn">Restore</button><button class="btn sec">Diff</button></div></div>
+</div></div></body></html>
