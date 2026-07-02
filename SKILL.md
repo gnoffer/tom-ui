@@ -2,8 +2,8 @@
 name: hacker-ui
 description: >-
   Toms Haus-Designsystem für dunkle Hacker-/Ops-UIs (Web-Frontends, Dashboards,
-  Feed-Seiten, Portale). Drei Themes: "midnight-ops" (professionell, Default),
-  "cyberdeck" (Neon-HUD), "phosphor" (Amber-CRT-Retro). Nutzen bei JEDEM Bau
+  Feed-Seiten, Portale). Drei Themes: "cyberdeck" (Neon-HUD, Default),
+  "midnight-ops" (professionell-ruhig), "phosphor" (Amber-CRT-Retro). Nutzen bei JEDEM Bau
   oder Redesign einer UI in diesem Homelab (Jarvis-Feed, Portal-Seiten,
   Status-/Admin-Seiten, neue Web-Apps), wenn keine andere Design-Vorgabe gilt.
 ---
@@ -17,8 +17,8 @@ akzentfarben-getrieben. **Immer genau EIN Theme pro App** — nie mischen.
 
 | Theme | Wann | Referenz |
 |---|---|---|
-| **midnight-ops** (Default) | Alles Produktive: Dashboards, Admin, Portale, Feeds. Wenn nichts anderes gesagt ist → das hier. | [themes/midnight-ops.md](themes/midnight-ops.md) |
-| **cyberdeck** | Show-/Fun-Oberflächen, Status-Walls, Gaming-nahe Tools, wenn Tom explizit „Neon/HUD/auffällig" will. | [themes/cyberdeck.md](themes/cyberdeck.md) |
+| **cyberdeck** (Default) | Toms Standard-Look. Wenn nichts anderes gesagt ist → das hier. Neon-HUD, Status-Walls, Dashboards, Feeds. | [themes/cyberdeck.md](themes/cyberdeck.md) |
+| **midnight-ops** | Wenn es betont ruhig/seriös/kontrastsicher sein soll (dichte Admin-Tabellen, viel Fließtext, WCAG-AAA-Anspruch). | [themes/midnight-ops.md](themes/midnight-ops.md) |
 | **phosphor** | Retro-/Terminal-Charme: CLI-artige Tools, Log-Viewer, Diagnose-Seiten, Einzweck-Utilities. | [themes/phosphor.md](themes/phosphor.md) |
 
 **Vor dem Implementieren die Theme-Datei lesen** — dort liegen die fertigen
